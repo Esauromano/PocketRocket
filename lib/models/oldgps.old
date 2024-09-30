@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+class GPSData with ChangeNotifier {
+  final int totalRides;
+  final double totalDistance;
+  final Duration totalTime;
+  final double maxSpeed;
+  final double currentSpeed;
+  final double previousSpeed;
+  final double totalAscension;
+  final double totalDescent;
+  final double totalCalories;
+
+  GPSData({
+    required this.totalRides,
+    required this.totalDistance,
+    required this.totalTime,
+    required this.maxSpeed,
+    required this.currentSpeed,
+    required this.previousSpeed,
+    required this.totalAscension,
+    required this.totalDescent,
+    required this.totalCalories,
+  });
+
+  factory GPSData.fromJson(Map<String, dynamic> json) {
+    return GPSData(
+      totalRides: json['totalRides'],
+      totalDistance: json['totalDistance'],
+      totalTime: Duration(seconds: json['totalTime']),
+      maxSpeed: json['maxSpeed'],
+      currentSpeed: json['currentSpeed'],
+      previousSpeed: json['previousSpeed'],
+      totalAscension: json['totalAscension'],
+      totalDescent: json['totalDescent'],
+      totalCalories: json['totalCalories'],
+    );
+  }
+
+  void stopTracking() {
+    // implementation
+  }
+
+  void startTracking() {
+    // implementation
+  }
+
+  String generatePointGeoJSON() {
+    return ' ';
+  }
+
+  String generateLineStringGeoJSON() {
+    // implementation
+    return ' ';
+  }
+
+  void saveGeoJSONFile(String geoJSON) {
+    // implementation
+  }
+
+  void reset() {
+    // implementation
+  }
+
+  get sessions => null;
+  int get elapsedTime => _elapsedTime;
+  int _elapsedTime = 0;
+}
